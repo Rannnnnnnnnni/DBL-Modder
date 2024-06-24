@@ -75,6 +75,9 @@ try:
 
                 print("File Encrpyted, you can find the file in output.")
 
+
+
+
     def accountModding():
             leave = False
 
@@ -124,6 +127,8 @@ try:
                     unitsModding()
 
                 else:
+                    leave = True
+
                     clear()
 
     def clear():
