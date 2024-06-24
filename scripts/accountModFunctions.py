@@ -24,7 +24,10 @@ class accountMods:
           data["unit"]["unitInfo_"][number]["exp"] = 100000000
 
     except Exception as Argument:
-      os.remove("errorLog.txt")
+      try: 
+        os.remove("errorLog.txt")
+      except:
+        pass
 
       errorLog = open("errorLog.txt", "x")
 
@@ -51,7 +54,10 @@ class accountMods:
           data["unit"]["unitInfo_"][number]["friendshipLevel"] = self.level
 
     except Exception as Argument:
-      os.remove("errorLog.txt")
+      try: 
+        os.remove("errorLog.txt")
+      except:
+        pass
 
       errorLog = open("errorLog.txt", "x")
 
@@ -80,7 +86,10 @@ class accountMods:
           data["unit"]["unitInfo_"][number]["specialArtsBoost"] = self.artsBoost
 
     except Exception as Argument:
-      os.remove("errorLog.txt")
+      try: 
+        os.remove("errorLog.txt")
+      except:
+        pass
 
       errorLog = open("errorLog.txt", "x")
 
@@ -125,7 +134,10 @@ class accountMods:
           data["item"]["characterShards_"][number]["count"] = levelDict[self.stars]
 
     except Exception as Argument:
-      os.remove("errorLog.txt")
+      try: 
+        os.remove("errorLog.txt")
+      except:
+        pass
 
       errorLog = open("errorLog.txt", "x")
 
@@ -152,7 +164,10 @@ class accountMods:
           data["item"]["characterPlentyShards_"][number]["count"] = 7000
 
     except Exception as Argument:
-      os.remove("errorLog.txt")
+      try: 
+        os.remove("errorLog.txt")
+      except:
+        pass
 
       errorLog = open("errorLog.txt", "x")
 
@@ -176,7 +191,10 @@ class accountMods:
           data["item"]["stones_"] = self.CC
 
         except Exception as Argument:
-          os.remove("errorLog.txt")
+          try: 
+            os.remove("errorLog.txt")
+          except:
+            pass
 
           errorLog = open("errorLog.txt", "x")
 
@@ -198,7 +216,10 @@ class accountMods:
           data["item"]["zeny_"] = self.zeni
 
         except Exception as Argument:
-          os.remove("errorLog.txt")
+          try: 
+            os.remove("errorLog.txt")
+          except:
+            pass
 
           errorLog = open("errorLog.txt", "x")
 

@@ -1,151 +1,162 @@
-import time
-import os
+try:
+    import time
+    import os
+    import requests
 
-from scripts.invert import invert
-from scripts.accountModFunctions import accountMods
-from stuff.text import main
-from stuff.text import account
-from stuff.text import units
-from stuff.text import main2
+    from scripts.invert import invert
+    from scripts.accountModFunctions import accountMods
+    from stuff.text import main
+    from stuff.text import account
+    from stuff.text import units
+    from stuff.text import main2
 
-restart = True
+    restart = True
 
-def unitsModding():
-  leave = False
+    def unitsModding():
+        leave = False
 
-  while not leave:
-    chosenOption = input(units+"\n>> ")
-  
-    if chosenOption == "1":
-      mod = accountMods(9999, 14, 99, 7, 9999, 0, 0)
-      mod.modCustomLevel()
-      mod.modCustomArtBoost()
-      mod.modCustomStars()
-      mod.modCustomZenkai()
-      mod.modCustomFriendshipLevel()
+        while not leave:
+            chosenOption = input(units + "\n>> ")
 
-      clear()
-  
-    elif chosenOption == "2":
-      level = int(input("\nEnter level:\n>> "))
-      mod = accountMods(level, 0, 0, 0, 0, 0)
-      mod.modCustomLevel()
+            if chosenOption == "1":
+                mod = accountMods(9999, 14, 99, 7, 9999, 0, 0)
+                mod.modCustomLevel()
+                mod.modCustomArtBoost()
+                mod.modCustomStars()
+                mod.modCustomZenkai()
+                mod.modCustomFriendshipLevel()
 
-      clear()
+                clear()
 
-    elif chosenOption == "3":
-      stars = int(input("\nEnter stars:\n>> "))
-      mod = accountMods(0, stars, 0, 0, 0, 0)
-      mod.modCustomStars()
+            elif chosenOption == "2":
+                level = int(input("\nEnter level:\n>> "))
+                mod = accountMods(level, 0, 0, 0, 0, 0)
+                mod.modCustomLevel()
 
-      clear()
+                clear()
 
-    elif chosenOption == "4":
-      boosts = int(input("\nEnter art boosts:\n>> "))
-      mod = accountMods(0, 0, boosts, 0, 0, 0)
-      mod.modCustomArtBoost()
-  
-      clear()
+            elif chosenOption == "3":
+                stars = int(input("\nEnter stars:\n>> "))
+                mod = accountMods(0, stars, 0, 0, 0, 0)
+                mod.modCustomStars()
 
-    elif chosenOption == "5":
-      zenkai = int(input("\nEnter zenkai:\n>> "))
-      mod = accountMods(0, 0, 0, zenkai, 0, 0)
-      mod.modCustomZenkai()
-    
-      clear()
-      
-    elif chosenOption == "6":
-      level = int(input("\nEnter level:\n>> "))
-      mod = accountMods(0, 0, 0, 0, amount, 0, 0)
-      mod.modCustomFriendshipLevel()
-    
-      clear()
+                clear()
 
-    elif chosenOption == "7":
-      print("\nEncryping file...")
-      
-      invertFile = invert("89bb4eb5637df3cd96c463a795005065")
-      invertFile.finish()
-    
-      clear()
+            elif chosenOption == "4":
+                boosts = int(input("\nEnter art boosts:\n>> "))
+                mod = accountMods(0, 0, boosts, 0, 0, 0)
+                mod.modCustomArtBoost()
 
-      leave = True
+                clear()
 
-      print("File Encrpyted, you can find the file in output.")
-      
-def accountModding():
-  leave = False
+            elif chosenOption == "5":
+                zenkai = int(input("\nEnter zenkai:\n>> "))
+                mod = accountMods(0, 0, 0, zenkai, 0, 0)
+                mod.modCustomZenkai()
 
-  while not leave:
-    chosenOption = input(account+"\n>> ")
-  
-    if chosenOption == "1":
-      amount = int(input("\nEnter amount:\n>> "))
-      mod = accountMods(0, 0, 0, 0, 0, amount, 0)
-      mod.modFakeCC()
-    
-      clear()
+                clear()
 
-      clear()
-  
-    elif chosenOption == "2":
-      amount = int(input("\nEnter amount:\n>> "))
-      mod = accountMods(0, 0, 0, 0, 0, 0, amount)
-      mod.modFakeZeni()
-    
-      clear()
+            elif chosenOption == "6":
+                level = int(input("\nEnter level:\n>> "))
+                mod = accountMods(0, 0, 0, 0, amount, 0, 0)
+                mod.modCustomFriendshipLevel()
 
-    elif chosenOption == "3":
-      print("\nEncryping file...")
-      
-      invertFile = invert("89bb4eb5637df3cd96c463a795005065")
-      invertFile.finish()
-    
-      clear()
+                clear()
 
-      leave = True
+            elif chosenOption == "7":
+                print("\nEncryping file...")
 
-      print("File Encrpyted, you can find the file in output.")
+                invertFile = invert("89bb4eb5637df3cd96c463a795005065")
+                invertFile.finish()
 
-def option1(choice):
-  leave = False
+                clear()
 
-  while not leave:
-    if choice == "1":
-      clear()
+                leave = True
 
-      accountModding()
+                print("File Encrpyted, you can find the file in output.")
 
-    elif choice == "2":
-      clear()
+        def accountModding():
+            leave = False
 
-      unitsModding()
+            while not leave:
+                chosenOption = input(account + "\n>> ")
 
-    else:
-      clear()
+                if chosenOption == "1":
+                    amount = int(input("\nEnter amount:\n>> "))
+                    mod = accountMods(0, 0, 0, 0, 0, amount, 0)
+                    mod.modFakeCC()
 
+                    clear()
 
+                    clear()
 
+                elif chosenOption == "2":
+                    amount = int(input("\nEnter amount:\n>> "))
+                    mod = accountMods(0, 0, 0, 0, 0, 0, amount)
+                    mod.modFakeZeni()
 
-def clear():
-  os.system('cls' if os.name == 'nt' else 'clear')
+                    clear()
 
-  time.sleep(1)
+                elif chosenOption == "3":
+                    print("\nEncryping file...")
 
-while restart:
-  chosenFile = input(main+"\n>> ")
+                    invertFile = invert("89bb4eb5637df3cd96c463a795005065")
+                    invertFile.finish()
 
-  if chosenFile == "1":
-    print("\nDecryping file...")
-    
-    invertFile = invert("89bb4eb5637df3cd96c463a795005065")
-    invertFile.invertFile()
+                    clear()
 
-    clear()
+                    leave = True
 
-    choice = input(main2+"\n>> ")
+                    print("File Encrpyted, you can find the file in output.")
 
-    option1(choice)
+        def option1(choice):
+            leave = False
 
-  else:
-    clear()
+            while not leave:
+                if choice == "1":
+                    clear()
+
+                    accountModding()
+
+                elif choice == "2":
+                    clear()
+
+                    unitsModding()
+
+                else:
+                    clear()
+
+        def clear():
+            os.system("cls" if os.name == "nt" else "clear")
+
+            time.sleep(1)
+
+        while restart:
+            chosenFile = input(main + "\n>> ")
+
+            if chosenFile == "1":
+                print("\nDecryping file...")
+
+                invertFile = invert("89bb4eb5637df3cd96c463a795005065")
+                invertFile.invertFile()
+
+                clear()
+
+                choice = input(main2 + "\n>> ")
+
+                option1(choice)
+
+            else:
+                clear()
+
+except Exception as Argument:
+    try:
+        os.remove("errorLog.txt")
+    except:
+        pass
+
+    errorLog = open("errorLog.txt", "x")
+
+    errorLog.write(str(Argument))
+
+    errorLog.close()
