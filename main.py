@@ -75,7 +75,7 @@ try:
 
                 print("File Encrpyted, you can find the file in output.")
 
-        def accountModding():
+    def accountModding():
             leave = False
 
             while not leave:
@@ -109,7 +109,7 @@ try:
 
                     print("File Encrpyted, you can find the file in output.")
 
-        def option1(choice):
+    def option1(choice):
             leave = False
 
             while not leave:
@@ -126,12 +126,12 @@ try:
                 else:
                     clear()
 
-        def clear():
+    def clear():
             os.system("cls" if os.name == "nt" else "clear")
 
             time.sleep(1)
 
-        while restart:
+    while restart:
             chosenFile = input(main + "\n>> ")
 
             if chosenFile == "1":
